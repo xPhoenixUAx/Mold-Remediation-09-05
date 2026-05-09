@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/common/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Contact the network for inspection, cleanup, urgent water-related mold concerns, HVAC odor issues, commercial support, and prevention help.">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bundle.css">
+    <link rel="stylesheet" href="css/pages/contact.css">
+    <script src="js/site-config.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="contact-page" data-page-title="Contact">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-site-header data-current="contact"></div>
+
+    <main id="main">
+      <section class="hero compact">
+        <div class="hero-content">
+          <span class="eyebrow">Talk to us</span>
+          <h1>Tell us what you are noticing.</h1>
+          <p>
+            Share the room, the smell or stain, any leak history, and whether anything is still wet.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="contact-stack" data-reveal>
+            <article class="contact-card">
+              <span class="eyebrow">Phone</span>
+              <h3>Speak with a real person</h3>
+              <p>Best when the situation is urgent, involves active water, tenant impact, visible growth, or business interruption.</p>
+              <a href="#" data-phone-link data-phone-text></a>
+            </article>
+            <article class="contact-card">
+              <span class="eyebrow">Email</span>
+              <h3>Send property details</h3>
+              <p>Useful for photos, reports, property management notes, insurance references, or a concern that is important but not immediate.</p>
+              <a href="mailto:" data-email-link data-email-text></a>
+            </article>
+            <article class="contact-card">
+              <span class="eyebrow">Availability</span>
+              <h3>Reach out when you notice it</h3>
+              <p data-business-hours></p>
+              <p class="microcopy" data-service-area></p>
+            </article>
+          </div>
+
+          <form class="contact-form" data-inquiry-form data-reveal>
+            <span class="eyebrow">Quick request</span>
+            <h2>Share the basics. We will help with the next step.</h2>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="property">Property type</label>
+                <select id="property" name="property">
+                  <option>Single-family home</option>
+                  <option>Apartment or condo</option>
+                  <option>Commercial property</option>
+                  <option>Rental or managed property</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="service">What sounds closest?</label>
+                <select id="service" name="service">
+                  <option>Not sure yet</option>
+                  <option>Inspection and testing</option>
+                  <option>Residential remediation</option>
+                  <option>Commercial remediation</option>
+                  <option>Emergency water-related mold response</option>
+                  <option>HVAC, air, or odor concern</option>
+                  <option>Moisture control and prevention</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="urgency">Urgency</label>
+                <select id="urgency" name="urgency">
+                  <option>Active water or urgent odor</option>
+                  <option>Visible mold but stable</option>
+                  <option>Hidden concern or testing question</option>
+                  <option>Prevention or recurring issue</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">What are you noticing?</label>
+                <textarea id="message" name="message" placeholder="For example: musty smell in basement after a leak, dark spots near bathroom ceiling, damp crawl space, odor when HVAC turns on, or mold concern at a rental property." required></textarea>
+              </div>
+              <div class="field full">
+                <button class="btn btn-primary" type="submit" data-cta-primary></button>
+                <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="contact-map-wrap" data-reveal>
+          <div class="contact-map-copy">
+            <span class="eyebrow">Network coverage</span>
+            <h2 data-service-area></h2>
+          </div>
+          <iframe
+            class="contact-map"
+            title="Service area coverage map"
+            data-map-embed
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>

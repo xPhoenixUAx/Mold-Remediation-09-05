@@ -1,0 +1,45 @@
+.legal-page .hero {
+  min-height: 54vh;
+  --hero-image: url("../../img/services/mold-remediation-equipment.webp");
+}
+
+.legal-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.legal-toc {
+  position: sticky;
+  top: calc(var(--header-height) + 22px);
+  display: grid;
+  gap: 10px;
+}
+
+.legal-toc a {
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 250, 242, 0.6);
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.legal-card {
+  margin-bottom: 18px;
+}
+
+.legal-card h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.7rem);
+}
+
+@media (max-width: 900px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-toc {
+    position: static;
+  }
+}

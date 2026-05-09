@@ -1,0 +1,137 @@
+.about-page .hero {
+  --hero-image: url("../../img/services/mold-remediation-equipment.webp");
+  min-height: 48vh;
+}
+
+.about-page .hero-content {
+  gap: 16px;
+}
+
+.about-page .hero h1 {
+  max-width: 760px;
+  font-size: clamp(1.95rem, 3.45vw, 3.45rem);
+}
+
+.about-page .hero p {
+  max-width: 600px;
+}
+
+.about-role-visual {
+  background:
+    linear-gradient(180deg, rgba(16, 21, 21, 0), rgba(16, 21, 21, 0.58)),
+    url("../../img/about/our-role.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.thinking-section {
+  background:
+    linear-gradient(135deg, rgba(235, 230, 221, 0.92), rgba(221, 229, 223, 0.82)),
+    #ebe6dd;
+}
+
+.thinking-section .section-lead {
+  margin-bottom: 34px;
+}
+
+.principle {
+  position: relative;
+  overflow: hidden;
+  min-height: 210px;
+  padding: 30px;
+  border: 1px solid rgba(36, 53, 45, 0.12);
+  border-radius: 6px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(246, 241, 232, 0.48)),
+    var(--surface);
+  box-shadow:
+    8px 8px 0 rgba(36, 53, 45, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.principle::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 7px;
+  background: var(--principle-accent, var(--copper));
+}
+
+.principle::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -42px;
+  width: 170px;
+  height: 170px;
+  opacity: 0.08;
+  background: var(--principle-accent, var(--forest));
+  clip-path: polygon(0 20%, 100% 0, 78% 100%, 18% 84%);
+}
+
+.principle:nth-child(1) {
+  --principle-accent: #9d6848;
+  background:
+    linear-gradient(145deg, rgba(255, 249, 240, 0.86), rgba(239, 229, 215, 0.7)),
+    var(--surface);
+}
+
+.principle:nth-child(2) {
+  --principle-accent: #5f7f6e;
+  background:
+    linear-gradient(145deg, rgba(246, 250, 246, 0.82), rgba(224, 233, 226, 0.68)),
+    var(--surface);
+}
+
+.principle:nth-child(3) {
+  --principle-accent: #24352d;
+  background:
+    linear-gradient(145deg, rgba(247, 243, 234, 0.88), rgba(226, 221, 211, 0.72)),
+    var(--surface);
+}
+
+.principle:nth-child(4) {
+  --principle-accent: #b97c50;
+  background:
+    linear-gradient(145deg, rgba(255, 250, 242, 0.84), rgba(232, 224, 211, 0.7)),
+    var(--surface);
+}
+
+.principle h3,
+.principle p {
+  position: relative;
+  z-index: 1;
+}
+
+.principle h3 {
+  max-width: 360px;
+  margin-bottom: 12px;
+}
+
+.principle p {
+  max-width: 460px;
+}
+
+.standard-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.standard-list article {
+  border-top: 2px solid var(--copper);
+  padding-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .principle-grid,
+  .standard-list {
+    grid-template-columns: 1fr;
+  }
+}
