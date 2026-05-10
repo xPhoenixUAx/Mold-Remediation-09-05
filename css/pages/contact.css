@@ -3,6 +3,14 @@
   min-height: 48vh;
 }
 
+.contact-page .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/common/mold-remediation-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 .contact-page .hero-content {
   gap: 16px;
 }

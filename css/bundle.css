@@ -145,6 +145,8 @@
 
 .quality-section {
   background:
+    linear-gradient(120deg, rgba(111, 152, 148, 0.12), transparent 36%),
+    linear-gradient(300deg, rgba(133, 136, 90, 0.12), transparent 42%),
     linear-gradient(180deg, rgba(244, 240, 232, 0), rgba(232, 225, 213, 0.54));
 }
 
@@ -196,6 +198,9 @@
 }
 
 .quality-list .feature-card {
+  --quality-accent: var(--water);
+  --quality-soft: var(--water-soft);
+  --card-accent: var(--quality-accent);
   display: grid;
   grid-template-columns: 44px 1fr;
   align-items: start;
@@ -206,11 +211,25 @@
     7px 7px 0 rgba(36, 53, 45, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.56);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  border-color: color-mix(in srgb, var(--quality-accent) 20%, var(--line));
+  background:
+    linear-gradient(140deg, color-mix(in srgb, var(--quality-soft) 50%, transparent), transparent 70%),
+    var(--surface);
+}
+
+.quality-list .feature-card:nth-child(2) {
+  --quality-accent: var(--rust);
+  --quality-soft: var(--rust-soft);
+}
+
+.quality-list .feature-card:nth-child(3) {
+  --quality-accent: var(--sage-accent);
+  --quality-soft: var(--sage-soft);
 }
 
 .quality-list .feature-card:hover {
   transform: translate(-2px, -2px);
-  border-color: rgba(157, 104, 72, 0.34);
+  border-color: color-mix(in srgb, var(--quality-accent) 44%, rgba(157, 104, 72, 0.34));
   box-shadow:
     10px 10px 0 rgba(36, 53, 45, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.64);
@@ -253,7 +272,7 @@
   place-items: center;
   width: 38px;
   height: 38px;
-  background: var(--forest);
+  background: var(--card-accent, var(--forest));
   color: var(--surface);
   border-radius: var(--radius);
   font-size: 0.78rem;
@@ -316,7 +335,7 @@
   width: 10px;
   height: 10px;
   border-radius: 1px;
-  border: 2px solid var(--copper);
+  border: 2px solid var(--list-accent, var(--copper));
 }
 
 .dark .dense-list li {
@@ -341,7 +360,8 @@
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(17, 23, 21, 0.96), rgba(17, 23, 21, 0.88)),
+    linear-gradient(90deg, rgba(17, 23, 21, 0.96), rgba(17, 23, 21, 0.85)),
+    linear-gradient(135deg, rgba(183, 111, 67, 0.2), rgba(111, 152, 148, 0.12), transparent 54%),
     url("../img/services/mold-remediation-equipment.webp");
   background-size: cover;
   background-position: center;
@@ -376,15 +396,16 @@
 }
 
 .dark .process-step {
+  --step-accent: var(--amber);
   min-height: 300px;
   position: relative;
   overflow: hidden;
   display: grid;
   align-content: space-between;
   background:
-    linear-gradient(160deg, rgba(251, 248, 241, 0.09), rgba(251, 248, 241, 0.018) 58%),
+    linear-gradient(160deg, color-mix(in srgb, var(--step-accent) 15%, transparent), rgba(251, 248, 241, 0.018) 58%),
     rgba(17, 23, 21, 0.78);
-  border-color: rgba(251, 248, 241, 0.16);
+  border-color: color-mix(in srgb, var(--step-accent) 28%, rgba(251, 248, 241, 0.16));
   box-shadow:
     10px 10px 0 rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -395,11 +416,11 @@
 .dark .process-step::before {
   content: "";
   position: absolute;
-  right: -24px;
-  bottom: -28px;
-  width: 190px;
-  height: 190px;
-  opacity: 0.11;
+  right: 18px;
+  bottom: 16px;
+  width: 134px;
+  height: 134px;
+  opacity: 0.095;
   background: var(--surface);
   mask: var(--process-print) center / contain no-repeat;
   -webkit-mask: var(--process-print) center / contain no-repeat;
@@ -434,32 +455,36 @@
 }
 
 .dark .process-step:nth-child(1) {
+  --step-accent: var(--water);
   --process-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M26 28h68v48H26z'/%3E%3Cpath d='M42 91h36'/%3E%3Cpath d='M43 45h34M43 59h22'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark .process-step:nth-child(2) {
+  --step-accent: var(--air);
   --process-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M24 60h58'/%3E%3Cpath d='m68 38 22 22-22 22'/%3E%3Cpath d='M28 30h28M28 90h28'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark .process-step:nth-child(3) {
+  --step-accent: var(--sage-accent);
   --process-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M60 18 96 34v27c0 22-14 40-36 47-22-7-36-25-36-47V34z'/%3E%3Cpath d='m46 62 10 10 22-25'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark .process-step:nth-child(4) {
+  --step-accent: var(--rust);
   --process-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M30 28h60v64H30z'/%3E%3Cpath d='M44 48h32M44 63h32M44 78h18'/%3E%3Cpath d='m70 80 8 8 16-20'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark .process-step:hover {
   transform: translate(-2px, -2px);
-  border-color: rgba(201, 149, 89, 0.44);
+  border-color: color-mix(in srgb, var(--step-accent) 54%, rgba(201, 149, 89, 0.44));
   background:
-    linear-gradient(160deg, rgba(201, 149, 89, 0.16), rgba(255, 255, 255, 0.028) 58%),
+    linear-gradient(160deg, color-mix(in srgb, var(--step-accent) 24%, transparent), rgba(255, 255, 255, 0.028) 58%),
     rgba(17, 23, 21, 0.82);
 }
 
 .dark .process-step:hover::before {
-  opacity: 0.17;
-  transform: translate(-8px, -8px) scale(1.04);
+  opacity: 0.15;
+  transform: translate(-5px, -5px) scale(1.03);
 }
 
 .dark .process-step .index {
@@ -488,6 +513,9 @@
 .testimonials-section {
   position: relative;
   overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(220, 231, 232, 0.5), transparent 34%),
+    linear-gradient(300deg, rgba(237, 216, 200, 0.42), transparent 48%);
 }
 
 .testimonials-section::before {
@@ -585,6 +613,8 @@
 }
 
 .testimonial-card {
+  --quote-accent: var(--copper);
+  --quote-soft: var(--rust-soft);
   min-height: 320px;
   display: grid;
   align-content: space-between;
@@ -592,7 +622,9 @@
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--quote-soft) 44%, transparent), transparent 68%),
+    var(--surface);
   box-shadow:
     8px 8px 0 rgba(36, 53, 45, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -608,7 +640,7 @@
   width: 160px;
   height: 160px;
   opacity: 0.06;
-  background: var(--forest);
+  background: var(--quote-accent);
   mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M28 24h64v54H50L28 96V24Z'/%3E%3Cpath d='M44 44h30M44 58h42'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
   -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M28 24h64v54H50L28 96V24Z'/%3E%3Cpath d='M44 44h30M44 58h42'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
 }
@@ -626,14 +658,14 @@
 }
 
 .quote-mark {
-  color: var(--copper);
+  color: var(--quote-accent);
   font-size: 3.4rem;
   font-weight: 900;
   line-height: 0.78;
 }
 
 .testimonial-type {
-  color: var(--copper);
+  color: var(--quote-accent);
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.13em;
@@ -652,6 +684,21 @@
   padding-top: 18px;
 }
 
+.testimonial-card:nth-child(3n + 1) {
+  --quote-accent: var(--water);
+  --quote-soft: var(--water-soft);
+}
+
+.testimonial-card:nth-child(3n + 2) {
+  --quote-accent: var(--sage-accent);
+  --quote-soft: var(--sage-soft);
+}
+
+.testimonial-card:nth-child(3n + 3) {
+  --quote-accent: var(--rust);
+  --quote-soft: var(--rust-soft);
+}
+
 .testimonial-card footer strong {
   color: var(--ink);
 }
@@ -662,14 +709,17 @@
 }
 
 .faq-item {
+  --faq-accent: var(--copper);
   overflow: hidden;
   transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .faq-item:hover,
 .faq-item.is-open {
-  border-color: rgba(157, 104, 72, 0.32);
-  background: var(--surface);
+  border-color: color-mix(in srgb, var(--faq-accent) 42%, rgba(157, 104, 72, 0.32));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--faq-accent) 9%, transparent), transparent 58%),
+    var(--surface);
   box-shadow: 6px 6px 0 rgba(36, 53, 45, 0.06);
 }
 
@@ -689,8 +739,24 @@
 .faq-item button::after {
   content: "+";
   font-size: 1.4rem;
-  color: var(--copper);
+  color: var(--faq-accent);
   transition: transform 220ms ease;
+}
+
+.faq-item:nth-child(4n + 1) {
+  --faq-accent: var(--water);
+}
+
+.faq-item:nth-child(4n + 2) {
+  --faq-accent: var(--sage-accent);
+}
+
+.faq-item:nth-child(4n + 3) {
+  --faq-accent: var(--rust);
+}
+
+.faq-item:nth-child(4n + 4) {
+  --faq-accent: var(--olive);
 }
 
 .faq-item.is-open button::after {
@@ -715,7 +781,8 @@
 
 .cta-band {
   background:
-    linear-gradient(90deg, rgba(17, 23, 21, 0.94), rgba(36, 53, 45, 0.92)),
+    linear-gradient(90deg, rgba(17, 23, 21, 0.94), rgba(36, 53, 45, 0.9)),
+    linear-gradient(125deg, rgba(183, 111, 67, 0.32), rgba(111, 152, 148, 0.16), transparent 62%),
     url("../img/common/mold-remediation-hero.webp");
   background-size: cover;
   background-position: center;

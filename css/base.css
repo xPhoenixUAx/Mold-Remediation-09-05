@@ -11,6 +11,17 @@
   --forest: #24352d;
   --copper: #9d6848;
   --amber: #c99559;
+  --water: #6f8790;
+  --water-soft: #dce7e8;
+  --sage-accent: #71866f;
+  --sage-soft: #dfe8db;
+  --rust: #b76f43;
+  --rust-soft: #edd8c8;
+  --air: #6f9894;
+  --air-soft: #d9e8e5;
+  --olive: #85885a;
+  --olive-soft: #e5e4cf;
+  --graphite: #4a5754;
   --charcoal: #111715;
   --line: rgba(22, 27, 25, 0.13);
   --line-light: rgba(251, 248, 241, 0.18);

@@ -1,5 +1,14 @@
+.service-page {
+  --page-accent: var(--copper);
+  --page-soft: var(--rust-soft);
+}
+
 .service-page .hero {
   min-height: 62vh;
+}
+
+.service-page main {
+  overflow: visible;
 }
 
 .service-page .hero-content {
@@ -12,37 +21,135 @@
   line-height: 0.98;
 }
 
+.service-page[data-page-title="Mold Inspection and Testing"] {
+  --page-accent: var(--water);
+  --page-soft: var(--water-soft);
+}
+
 .service-page[data-page-title="Mold Inspection and Testing"] .hero {
   --hero-image: url("../../img/services/mold-inspection-testing-hero.webp");
+}
+
+.service-page[data-page-title="Mold Inspection and Testing"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/mold-inspection-testing-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.service-page[data-page-title="Residential Mold Remediation"] {
+  --page-accent: var(--sage-accent);
+  --page-soft: var(--sage-soft);
 }
 
 .service-page[data-page-title="Residential Mold Remediation"] .hero {
   --hero-image: url("../../img/services/residential-mold-remediation-hero.webp");
 }
 
+.service-page[data-page-title="Residential Mold Remediation"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/residential-mold-remediation-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.service-page[data-page-title="Commercial Mold Remediation"] {
+  --page-accent: var(--graphite);
+  --page-soft: #dde2df;
+}
+
 .service-page[data-page-title="Commercial Mold Remediation"] .hero {
   --hero-image: url("../../img/services/commercial-mold-remediation-hero.webp");
+}
+
+.service-page[data-page-title="Commercial Mold Remediation"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/commercial-mold-remediation-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.service-page[data-page-title="Emergency Mold and Water Damage Response"] {
+  --page-accent: var(--rust);
+  --page-soft: var(--rust-soft);
 }
 
 .service-page[data-page-title="Emergency Mold and Water Damage Response"] .hero {
   --hero-image: url("../../img/services/emergency-mold-response-hero.webp");
 }
 
+.service-page[data-page-title="Emergency Mold and Water Damage Response"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/emergency-mold-response-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.service-page[data-page-title="HVAC Air and Odor Mold Solutions"] {
+  --page-accent: var(--air);
+  --page-soft: var(--air-soft);
+}
+
 .service-page[data-page-title="HVAC Air and Odor Mold Solutions"] .hero {
   --hero-image: url("../../img/services/hvac-air-odor-solutions-hero.webp");
+}
+
+.service-page[data-page-title="HVAC Air and Odor Mold Solutions"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/hvac-air-odor-solutions-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.service-page[data-page-title="Moisture Control and Mold Prevention"] {
+  --page-accent: var(--olive);
+  --page-soft: var(--olive-soft);
 }
 
 .service-page[data-page-title="Moisture Control and Mold Prevention"] .hero {
   --hero-image: url("../../img/services/moisture-control-prevention-hero.webp");
 }
 
+.service-page[data-page-title="Moisture Control and Mold Prevention"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/moisture-control-prevention-hero.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 .service-page[data-page-title="Mold Remediation Service Framework"] .hero {
   --hero-image: url("../../img/services/mold-remediation-equipment.webp");
+}
+
+.service-page[data-page-title="Mold Remediation Service Framework"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/mold-remediation-equipment.webp");
+  background-size: cover;
+  background-position: center;
 }
 
 .service-outline {
   position: sticky;
   top: calc(var(--header-height) + 22px);
+  align-self: start;
+  max-height: calc(100vh - var(--header-height) - 44px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.service-outline[data-reveal],
+.service-outline[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .service-outline h2 {
@@ -50,7 +157,7 @@
   font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: var(--page-accent, var(--copper));
   margin-bottom: 16px;
 }
 
@@ -66,6 +173,13 @@
   background: var(--surface);
   color: var(--ink-soft);
   font-weight: 800;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.service-outline a:hover {
+  border-color: color-mix(in srgb, var(--page-accent, var(--copper)) 42%, var(--line));
+  background: color-mix(in srgb, var(--page-soft, var(--rust-soft)) 40%, var(--surface));
+  transform: translateX(2px);
 }
 
 .service-layout {
@@ -94,9 +208,11 @@
 
 .outcome {
   padding: 22px;
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--page-accent, var(--copper)) 22%, var(--line));
   border-radius: var(--radius);
-  background: var(--surface);
+  background:
+    linear-gradient(140deg, color-mix(in srgb, var(--page-soft, var(--rust-soft)) 48%, transparent), transparent 68%),
+    var(--surface);
 }
 
 .outcome strong {
@@ -114,6 +230,10 @@
   min-height: 0;
   display: block;
   padding: 24px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--page-soft, var(--rust-soft)) 46%, transparent), transparent 70%),
+    var(--surface);
+  border-color: color-mix(in srgb, var(--page-accent, var(--copper)) 22%, var(--line));
 }
 
 .service-page .process-step .index {
@@ -121,6 +241,7 @@
   height: 42px;
   margin: 0 0 18px;
   border-radius: 5px;
+  background: var(--page-accent, var(--forest));
 }
 
 .service-page .process-step h3 {

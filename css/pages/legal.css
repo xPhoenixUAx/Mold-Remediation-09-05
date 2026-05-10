@@ -3,6 +3,14 @@
   --hero-image: url("../../img/services/mold-remediation-equipment.webp");
 }
 
+.legal-page .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/mold-remediation-equipment.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 .legal-layout {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);

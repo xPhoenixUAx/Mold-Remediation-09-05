@@ -2,6 +2,14 @@
   --hero-image: url("../../img/services/mold-remediation-equipment.webp");
 }
 
+.services-page .hero::before {
+  background:
+    linear-gradient(90deg, rgba(17, 23, 21, 0.86), rgba(17, 23, 21, 0.58) 48%, rgba(17, 23, 21, 0.25)),
+    url("../../img/services/mold-remediation-equipment.webp");
+  background-size: cover;
+  background-position: center;
+}
+
 .service-directory {
   display: grid;
   gap: 18px;
@@ -13,6 +21,8 @@
 }
 
 .service-tile {
+  --service-accent: var(--copper);
+  --service-soft: var(--rust-soft);
   min-height: 390px;
   display: grid;
   align-content: space-between;
@@ -21,7 +31,7 @@
   border: 1px solid var(--line);
   border-radius: 6px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(246, 241, 232, 0.58)),
+    linear-gradient(135deg, color-mix(in srgb, var(--service-soft) 58%, rgba(255, 255, 255, 0.82)), rgba(246, 241, 232, 0.58)),
     var(--surface);
   box-shadow:
     8px 8px 0 rgba(36, 53, 45, 0.075),
@@ -56,14 +66,15 @@
   content: "";
   position: absolute;
   inset: 14px;
-  border: 1px solid rgba(36, 53, 45, 0.07);
+  border: 1px solid color-mix(in srgb, var(--service-accent) 21%, rgba(36, 53, 45, 0.07));
+  border-top-width: 3px;
   pointer-events: none;
   z-index: 0;
 }
 
 .service-tile:hover {
   transform: translate(-3px, -3px);
-  border-color: rgba(157, 104, 72, 0.36);
+  border-color: color-mix(in srgb, var(--service-accent) 48%, rgba(157, 104, 72, 0.36));
   box-shadow:
     14px 14px 0 rgba(36, 53, 45, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.7);
@@ -71,7 +82,7 @@
 
 .service-tile:not(.accent):hover {
   background:
-    linear-gradient(135deg, rgba(251, 248, 241, 0.98), rgba(239, 231, 217, 0.82)),
+    linear-gradient(135deg, color-mix(in srgb, var(--service-soft) 72%, rgba(251, 248, 241, 0.98)), rgba(239, 231, 217, 0.82)),
     var(--surface);
 }
 
@@ -86,26 +97,38 @@
 }
 
 .service-tile:nth-child(1) {
+  --service-accent: var(--water);
+  --service-soft: var(--water-soft);
   --service-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M28 18h45l19 19v65H28z'/%3E%3Cpath d='M72 18v22h20'/%3E%3Cpath d='M42 62h38M42 78h26'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .service-tile:nth-child(2) {
+  --service-accent: var(--sage-accent);
+  --service-soft: var(--sage-soft);
   --service-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M18 56 60 22l42 34'/%3E%3Cpath d='M31 51v47h58V51'/%3E%3Cpath d='M47 98V68h26v30'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .service-tile:nth-child(3) {
+  --service-accent: var(--graphite);
+  --service-soft: #dde2df;
   --service-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M24 102V22h72v80'/%3E%3Cpath d='M38 40h12M70 40h12M38 60h12M70 60h12M50 102V76h20v26'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .service-tile:nth-child(4) {
+  --service-accent: var(--rust);
+  --service-soft: var(--rust-soft);
   --service-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M60 16 96 33v28c0 22-14 40-36 47-22-7-36-25-36-47V33z'/%3E%3Cpath d='M60 38v29M60 82h1'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .service-tile:nth-child(5) {
+  --service-accent: var(--air);
+  --service-soft: var(--air-soft);
   --service-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M22 26h76v42H22z'/%3E%3Cpath d='M34 40h52M34 54h52'/%3E%3Cpath d='M32 88c9-9 21-9 30 0s21 9 30 0'/%3E%3Cpath d='M32 103c9-9 21-9 30 0s21 9 30 0'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .service-tile:nth-child(6) {
+  --service-accent: var(--olive);
+  --service-soft: var(--olive-soft);
   --service-print: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M60 20c18 19 28 34 28 50a28 28 0 0 1-56 0c0-16 10-31 28-50Z'/%3E%3Cpath d='M30 103h60M43 86c9 7 25 7 34 0'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -120,7 +143,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--copper);
+  color: var(--service-accent);
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.09em;
@@ -139,6 +162,7 @@
   margin: 0;
   font-size: clamp(1.28rem, 1.65vw, 1.72rem);
   line-height: 1.02;
+  color: color-mix(in srgb, var(--service-accent) 26%, var(--ink));
 }
 
 .service-tile p {
@@ -153,7 +177,7 @@
   display: block;
   margin-top: 6px;
   padding-left: 13px;
-  border-left: 2px solid rgba(157, 104, 72, 0.5);
+  border-left: 2px solid color-mix(in srgb, var(--service-accent) 62%, rgba(157, 104, 72, 0.5));
   color: var(--forest);
   font-size: 0.92rem;
   line-height: 1.45;
@@ -167,10 +191,10 @@
 }
 
 .tile-tags span {
-  border: 1px solid rgba(157, 104, 72, 0.24);
+  border: 1px solid color-mix(in srgb, var(--service-accent) 32%, rgba(157, 104, 72, 0.24));
   border-radius: 5px;
   padding: 7px 10px;
-  background: rgba(255, 255, 255, 0.36);
+  background: color-mix(in srgb, var(--service-soft) 42%, rgba(255, 255, 255, 0.36));
   color: var(--ink-muted);
   font-size: 0.76rem;
   font-weight: 800;
@@ -196,7 +220,9 @@
   padding: 12px 15px;
   border: 1px solid rgba(25, 43, 36, 0.14);
   border-radius: 5px;
-  background: var(--forest);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--service-accent) 20%, transparent), transparent),
+    var(--forest);
   color: var(--surface);
   font-size: 0.86rem;
   font-weight: 900;
@@ -234,7 +260,7 @@
 
 .tile-link:hover {
   transform: translateY(-2px);
-  border-color: rgba(201, 139, 94, 0.62);
+  border-color: color-mix(in srgb, var(--service-accent) 62%, rgba(201, 139, 94, 0.62));
   box-shadow: 0 10px 18px rgba(36, 53, 45, 0.18);
 }
 
